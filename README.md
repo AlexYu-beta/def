@@ -1,2 +1,2 @@
 # def
-## A base-based personal encyclopedia
+## A bash-based personal encyclopedia
