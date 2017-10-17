@@ -1,0 +1,9 @@
+def, a bash-based personal encyclopedia system.
+
+Usage:
+def -h/def -help:
+    display help doc
+
+def -v/def -version:
+    display the version
+

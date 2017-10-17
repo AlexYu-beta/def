@@ -6,6 +6,6 @@
 # requires correct password from env
 # requires correct redis source code directory
 
-
-cd /usr/local/redis-4.0.2/src
-./redis-cli -h 127.0.0.1 -p 6379 -a $REDISPWD
+source ./def_conf.sh
+cd $redis_dir
+./redis-cli -h 127.0.0.1 -p 6379 -a $redis_pwd
