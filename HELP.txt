@@ -1,6 +1,15 @@
 def, a bash-based personal encyclopedia system.
 
 Usage:
+def <word>:
+    get the definition of a word
+
+def -a <word> <definition file>:
+    add a definition item from a file
+
+def -as <word> <definition string>:
+    add a definition item directly
+
 def -h/def -help:
     display help doc
 
