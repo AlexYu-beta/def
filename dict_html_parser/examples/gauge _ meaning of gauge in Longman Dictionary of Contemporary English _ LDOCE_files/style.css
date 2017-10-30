@@ -1,0 +1,248 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1;
+    font-size: 12px;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+ul { 
+    list-style-type: disc; 
+    list-style-position: inside; 
+}
+ol { 
+    list-style-type: decimal; 
+    list-style-position: inside; 
+}
+ol, ul{
+    padding: 0;
+}
+ol ol { 
+    list-style-type: lower-latin; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+}
+ul ul, ol ul, ul li { 
+    list-style-type: disc; 
+    margin-left: 15px; 
+    list-style-position: outside;
+}
+b{
+    font-weight: bold;
+}
+i{
+    font-style: italic;
+}
+sup{
+    font-size: smaller;
+    vertical-align: super;
+}
+sub{
+    font-size: smaller;
+    vertical-align: sub;
+}
+img{
+    max-width: 100%;
+}
+a{
+    cursor: pointer;
+    color: #0000ff;
+}
+a u, a span{
+    color: inherit;
+}
+
+#wrapper{
+    height: 100%;
+}
+
+#offset{
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+#offset.left{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#container{
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#content{
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+}
+
+#content p{
+    pointer-events: none;
+}
+
+#content #toggle{
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+}
+
+#header{
+    width: 100%;
+    display: block;
+    z-index: 1;
+    position: relative;
+}
+#header::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#toggle{
+    display: none;
+    float: right;
+    cursor: pointer;
+    margin-right: 3px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+}
+#wrapper #toggle .expand, #wrapper #toggle .collapse{
+    display: none;
+    height: inherit;
+}
+#wrapper.expanded #toggle .collapse{
+    display: block;
+}
+#wrapper.collapsed #toggle .expand{
+    display: block;
+}
+
+#toggle-text{
+    float: left;
+    display: block;
+}
+#toggle-text img{
+    width: 100%;
+}
+
+#toggle-arrow{
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 4px;
+}
+#toggle-arrow .expand, #toggle-arrow .collapse{
+    fill: inherit;
+}
+
+#toggle-arrow svg{
+    width: 100%;
+    height: 100%;
+    fill: inherit;
+}
+
+#toggle-arrow svg, #toggle-arrow svg path{
+    fill: inherit;
+}
+
+#replay-wrapper{
+    width: 100%;
+    display: none;
+}
+#replay{
+    padding: 3px 5px;
+    clear: both;
+    display: inline-block;
+    background: #ddd;
+    cursor: pointer;
+}
+#replay span{
+    display: block;
+    float: left;
+}
+#replay #replay-icon{
+    width: 13px;
+    float: left;
+    margin-top: 1px;
+}
+#replay svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#replay svg, #replay svg path{
+    fill: inherit;
+}
+
+.scrollButton {
+    right: 0px;
+    width: 8px;
+    padding: 1px;
+    height: 8px;
+    position: absolute;
+    z-index: 9;
+    background: #aaa;
+    cursor: pointer;
+}
+
+.scrollButton svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.scrollButton svg, svg path{
+    fill: inherit;
+}
+
+.scrollButton#scrollUp{
+    top: 0;
+}
+
+.scrollButton#scrollDown{
+    bottom: 0px;
+}
+
+.ps-scrollbar-y-rail{
+    opacity: 1!important;
+    right: 0px!important;
+    width: 10px;
+    -webkit-transition: .3s height;
+    -moz-transition: .3s height;
+    -ms-transition: .3s height;
+    -o-transition: .3s height;
+    transition: .3s height;
+    z-index: 1;
+}
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y{
+    width: 10px;
+    cursor: pointer;
+    -webkit-transition: .3s height;
+    -moz-transition: .3s height;
+    -ms-transition: .3s height;
+    -o-transition: .3s height;
+    transition: .3s height;
+}
+
+.dummy-rail{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    z-index: 0;
+}

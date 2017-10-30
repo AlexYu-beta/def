@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://s0.2mdn.net/3326219/1501537576935/Brita_072817_Longlast_water_bottles_Display_Save_Now_300x50/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="ad.size" content="width=300,height=50">
+    <title>Template</title>
+
+    <script src="./TweenMax.min.js"></script>
+	<script src="./EasePack.min.js"></script>
+	<script src="./CSSPlugin.min.js"></script>
+
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0 auto
+        }
+
+        #banner {
+            width: 300px;
+            height: 50px;
+            background-color: #ffffff;
+            margin: 0 auto;
+            padding: 0 auto;
+			background: #ffffff; /* Old browsers */
+			background: -moz-linear-gradient(left, #94b8cc 0%, #c8dbe7 13%, #e5eef3 25%, #f3f4f8 51%, #e5eef3 76%, #c8dbe7 89%, #94b8cc 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #94b8cc 0%,#c8dbe7 13%,#e5eef3 25%,#f3f4f8 51%,#e5eef3 76%,#c8dbe7 89%,#94b8cc 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #94b8cc 0%,#c8dbe7 13%,#e5eef3 25%,#f3f4f8 51%,#e5eef3 76%,#c8dbe7 89%,#94b8cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94b8cc', endColorstr='#94b8cc',GradientType=1 ); /* IE6-9 */
+        }
+
+        .container {
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            overflow: hidden
+        }
+
+        #banner_btn {
+	        position: absolute;
+            width: 300px;
+            height: 50px;
+            background-color: transparent;
+			top: 0px;
+			left: 0px;
+        }
+
+        #banner_border {
+	        position: absolute;
+            width: 298px;
+            height: 48px;
+            background-color: transparent;
+            border: 1px solid #888888;
+			top: 0px;
+			left: 0px;
+        }
+
+        #banner_btn:hover {
+	        cursor:pointer;
+        }
+
+        #water_container{
+		   position: absolute;
+		   width:300px;
+		   height:50px;
+		   opacity: 1;
+		   top: 50px;
+		   background: transparent;
+		   mix-blend-mode: multiply;
+		}
+
+		#water{
+		   position: absolute;
+		   width:600px;
+		   height:50px;
+		   background:url("images/water_2.png") no-repeat;
+		   background-position:-0px 0px;
+		   opacity: 1;
+		   top: 0px;
+		   left: 0px;
+		}
+
+		#cta{
+		   position: absolute;
+		   overflow: hidden;
+		   width:54px;
+		   height:13px;
+		    top: 31px;
+		    left: 239px;
+		   background:#ff4d00;
+		   opacity: 0;
+		   -moz-border-radius: 5px;
+		   border-radius: 5px;
+		}
+
+		#shop_now{
+		   position: absolute;
+		   overflow: hidden;
+		   width:300px;
+		   height:50px;
+		   background:url("images/sprite.png") no-repeat;
+		   background-position: -239px -32px;
+		   opacity: 1;
+		}
+
+
+		#copy_container{
+		   position: absolute;
+		   overflow: hidden;
+		   width:300px;
+		   height:50px;
+		   opacity: 1;
+		   clip:rect(80px 300px 50px 0px);
+		   background: transparent;
+		}
+
+
+		#copy{
+		   position: absolute;
+		   overflow: hidden;
+		   width:300px;
+		   height:200px;
+		   background:url("images/sprite.png") no-repeat;
+		   background-position:-300px 0px;
+		   opacity: 1;
+		   top: 60px;
+		}
+
+		#legal_container{
+		    position: absolute;
+		    overflow: hidden;
+		    width: 300px;
+		    height: 24px;
+		    opacity: 1;
+		    top: 38px;
+		}
+
+		#legal {
+		    position: absolute;
+		    overflow: hidden;
+		    width: 300px;
+		    height: 50px;
+		    background: url(images/sprite.png) no-repeat;
+		    background-position: -300px -75px;
+		    opacity: 1;
+		    top: 0px;
+		}
+
+		#legal_button {
+		    position: absolute;
+		    overflow: hidden;
+		    width: 300px;
+		    height: 25px;
+		    opacity: 1;
+		    top: 0px;
+		}
+
+		#legal_button:hover{
+			cursor: pointer;
+		}
+
+
+		#Logo{
+		   position: absolute;
+		   overflow: hidden;
+		   width:300px;
+		   height:50px;
+		   background:url("images/sprite.png") no-repeat;
+		   background-position:-0px -50px;
+		   opacity: 1;
+		}
+
+
+    </style>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body onload="start();" data-size="300x350">
+    <div id="banner" class="container">
+	    <div id="banner_border"></div>
+
+
+
+		<div id="cta" style="opacity: 1; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+			<div id="shop_now"></div>
+		</div>
+		<div id="copy_container" style="clip: rect(0px 300px 100px 0px); transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+			<div id="copy" style="transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, -60, 0, 1);"></div>
+		<div id="circle82" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 64.2948, -180, 0, 1);"></div><div id="circle195" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 293.485, -180, 0, 1);"></div><div id="circle26" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 83.6203, -180, 0, 1);"></div><div id="circle16" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 236.507, -180, 0, 1);"></div><div id="circle193" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 51.6586, -180, 0, 1);"></div><div id="circle197" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 205.411, -180, 0, 1);"></div><div id="circle19" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 79.9887, -180, 0, 1);"></div><div id="circle86" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 61.7792, -180, 0, 1);"></div><div id="circle170" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 127.844, -180, 0, 1);"></div><div id="circle113" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 236.853, -180, 0, 1);"></div><div id="circle38" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 27.7896, -180, 0, 1);"></div><div id="circle90" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 73.4078, -180, 0, 1);"></div><div id="circle167" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 106.222, -180, 0, 1);"></div><div id="circle130" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 102.473, -180, 0, 1);"></div><div id="circle120" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 12.1168, -180, 0, 1);"></div><div id="circle192" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 45.6944, -180, 0, 1);"></div><div id="circle153" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 224.144, -180, 0, 1);"></div><div id="circle145" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 208.471, -180, 0, 1);"></div><div id="circle119" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 267.24, -180, 0, 1);"></div><div id="circle108" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 106.617, -180, 0, 1);"></div><div id="circle106" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 133.754, -180, 0, 1);"></div><div id="circle65" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 192.288, -180, 0, 1);"></div><div id="circle3" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 219.465, -180, 0, 1);"></div><div id="circle2" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 176.095, -180, 0, 1);"></div><div id="circle117" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 193.617, -180, 0, 1);"></div><div id="circle147" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 44.3884, -180, 0, 1);"></div><div id="circle127" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 75.0998, -180, 0, 1);"></div><div id="circle46" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 191.931, -180, 0, 1);"></div><div id="circle185" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 242.157, -180, 0, 1);"></div><div id="circle18" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 221.429, -180, 0, 1);"></div><div id="circle161" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 6.63668, -180, 0, 1);"></div><div id="circle191" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 142.768, -180, 0, 1);"></div><div id="circle168" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 27.932, -180, 0, 1);"></div><div id="circle41" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 67.4755, -180, 0, 1);"></div><div id="circle128" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 105.155, -180, 0, 1);"></div><div id="circle85" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 276.416, -180, 0, 1);"></div><div id="circle39" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 94.1929, -180, 0, 1);"></div><div id="circle36" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 60.6998, -180, 0, 1);"></div><div id="circle179" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 18.1469, -180, 0, 1);"></div><div id="circle175" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 5.18213, -180, 0, 1);"></div><div id="circle58" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 72.0179, -180, 0, 1);"></div><div id="circle56" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 196.959, -180, 0, 1);"></div><div id="circle152" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 79.0972, -180, 0, 1);"></div><div id="circle146" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 32.3619, -180, 0, 1);"></div><div id="circle27" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 88.5698, -180, 0, 1);"></div><div id="circle50" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 38.071, -180, 0, 1);"></div><div id="circle74" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 286.425, -180, 0, 1);"></div><div id="circle186" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 177.489, -180, 0, 1);"></div><div id="circle104" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 238.352, -180, 0, 1);"></div><div id="circle156" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 140.599, -180, 0, 1);"></div><div id="circle162" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 156.678, -180, 0, 1);"></div><div id="circle75" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 268.867, -180, 0, 1);"></div><div id="circle100" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 209.289, -180, 0, 1);"></div><div id="circle6" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 283.32, -180, 0, 1);"></div><div id="circle149" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 67.1063, -180, 0, 1);"></div><div id="circle11" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 9.53801, -180, 0, 1);"></div><div id="circle15" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 13.6317, -180, 0, 1);"></div><div id="circle77" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 185.52, -180, 0, 1);"></div><div id="circle183" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 135.917, -180, 0, 1);"></div><div id="circle143" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 20.2884, -180, 0, 1);"></div><div id="circle139" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 67.1695, -180, 0, 1);"></div><div id="circle68" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 293.015, -180, 0, 1);"></div><div id="circle64" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 29.103, -180, 0, 1);"></div><div id="circle93" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 53.6932, -180, 0, 1);"></div><div id="circle22" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 5.68621, -180, 0, 1);"></div><div id="circle111" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 278.531, -180, 0, 1);"></div><div id="circle57" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 25.2934, -180, 0, 1);"></div><div id="circle25" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 123.953, -180, 0, 1);"></div><div id="circle48" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 130.03, -180, 0, 1);"></div><div id="circle54" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 188.727, -180, 0, 1);"></div><div id="circle198" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 284.143, -180, 0, 1);"></div><div id="circle96" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 33.8922, -180, 0, 1);"></div><div id="circle123" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 12.0921, -180, 0, 1);"></div><div id="circle37" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 136.113, -180, 0, 1);"></div><div id="circle171" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 90.3443, -180, 0, 1);"></div><div id="circle76" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 115.044, -180, 0, 1);"></div><div id="circle99" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 111.175, -180, 0, 1);"></div><div id="circle78" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 268.422, -180, 0, 1);"></div><div id="circle73" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 10.2174, -180, 0, 1);"></div><div id="circle140" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 201.033, -180, 0, 1);"></div><div id="circle69" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 86.8759, -180, 0, 1);"></div><div id="circle184" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 290.434, -180, 0, 1);"></div><div id="circle154" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 167.408, -180, 0, 1);"></div><div id="circle71" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 193.065, -180, 0, 1);"></div><div id="circle31" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 65.6912, -180, 0, 1);"></div><div id="circle21" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 51.9648, -180, 0, 1);"></div><div id="circle137" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 70.1169, -180, 0, 1);"></div><div id="circle166" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 191.091, -180, 0, 1);"></div><div id="circle45" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 217.796, -180, 0, 1);"></div><div id="circle14" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 146.951, -180, 0, 1);"></div><div id="circle70" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 74.4779, -180, 0, 1);"></div><div id="circle59" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 18.2617, -180, 0, 1);"></div><div id="circle199" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 23.5911, -180, 0, 1);"></div><div id="circle172" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 96.6863, -180, 0, 1);"></div><div id="circle176" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 69.2857, -180, 0, 1);"></div><div id="circle131" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 102.08, -180, 0, 1);"></div><div id="circle72" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 72.0503, -180, 0, 1);"></div><div id="circle4" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 212.535, -180, 0, 1);"></div><div id="circle150" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 101.974, -180, 0, 1);"></div><div id="circle121" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 177.003, -180, 0, 1);"></div><div id="circle40" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 209.766, -180, 0, 1);"></div><div id="circle29" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 76.6729, -180, 0, 1);"></div><div id="circle63" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 166.699, -180, 0, 1);"></div><div id="circle122" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 58.4794, -180, 0, 1);"></div><div id="circle42" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 186.375, -180, 0, 1);"></div><div id="circle112" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 13.8139, -180, 0, 1);"></div><div id="circle107" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 36.3307, -180, 0, 1);"></div><div id="circle81" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 129.611, -180, 0, 1);"></div><div id="circle55" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 245.437, -180, 0, 1);"></div><div id="circle35" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 88.6895, -180, 0, 1);"></div><div id="circle118" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 54.3837, -180, 0, 1);"></div><div id="circle20" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 122.934, -180, 0, 1);"></div><div id="circle7" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 67.7272, -180, 0, 1);"></div><div id="circle144" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 103.583, -180, 0, 1);"></div><div id="circle83" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 179.59, -180, 0, 1);"></div><div id="circle132" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 150.852, -180, 0, 1);"></div><div id="circle151" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 14.2699, -180, 0, 1);"></div><div id="circle126" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 296.14, -180, 0, 1);"></div><div id="circle87" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 49.4715, -180, 0, 1);"></div><div id="circle61" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 55.8077, -180, 0, 1);"></div><div id="circle148" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 281.714, -180, 0, 1);"></div><div id="circle124" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 56.3204, -180, 0, 1);"></div><div id="circle80" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 146.732, -180, 0, 1);"></div><div id="circle10" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 78.7989, -180, 0, 1);"></div><div id="circle67" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 211.657, -180, 0, 1);"></div><div id="circle32" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 131.248, -180, 0, 1);"></div><div id="circle141" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 35.7263, -180, 0, 1);"></div><div id="circle187" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 281.143, -180, 0, 1);"></div><div id="circle115" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 46.263, -180, 0, 1);"></div><div id="circle5" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 14.2762, -180, 0, 1);"></div><div id="circle174" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 135.386, -180, 0, 1);"></div><div id="circle129" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 32.4204, -180, 0, 1);"></div><div id="circle97" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 68.0305, -180, 0, 1);"></div><div id="circle62" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 193.432, -180, 0, 1);"></div><div id="circle92" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 134.089, -180, 0, 1);"></div><div id="circle79" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 194.188, -180, 0, 1);"></div><div id="circle194" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 255.185, -180, 0, 1);"></div><div id="circle160" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 24.7923, -180, 0, 1);"></div><div id="circle135" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 186.498, -180, 0, 1);"></div><div id="circle60" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 211.875, -180, 0, 1);"></div><div id="circle51" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 78.312, -180, 0, 1);"></div><div id="circle109" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 97.5231, -179.999, 0, 1);"></div><div id="circle53" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 116.033, -180, 0, 1);"></div><div id="circle138" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 279.989, -180, 0, 1);"></div><div id="circle34" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 154.005, -180, 0, 1);"></div><div id="circle1" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 32.7833, -180, 0, 1);"></div><div id="circle13" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 50.9449, -180, 0, 1);"></div><div id="circle182" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0.610843, -180, 0, 1);"></div><div id="circle165" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 277.841, -180, 0, 1);"></div><div id="circle189" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 115.896, -179.704, 0, 1);"></div><div id="circle12" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 93.6758, -180, 0, 1);"></div><div id="circle116" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 247.461, -179.844, 0, 1);"></div><div id="circle101" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 230.954, -180, 0, 1);"></div><div id="circle95" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 159.62, -179.964, 0, 1);"></div><div id="circle157" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 230.538, -180, 0, 1);"></div><div id="circle103" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 167.115, -180, 0, 1);"></div><div id="circle28" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 125.372, -180, 0, 1);"></div><div id="circle0" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 162.388, -180, 0, 1);"></div><div id="circle158" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 285.645, -180, 0, 1);"></div><div id="circle23" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 271.586, -180, 0, 1);"></div><div id="circle102" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 103.706, -178.748, 0, 1);"></div><div id="circle91" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 73.5237, -180, 0, 1);"></div><div id="circle134" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 25.9037, -180, 0, 1);"></div><div id="circle43" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 102.118, -180, 0, 1);"></div><div id="circle133" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 128.632, -180, 0, 1);"></div><div id="circle173" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 273.49, -180, 0, 1);"></div><div id="circle169" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 82.4109, -180, 0, 1);"></div><div id="circle164" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 228.834, -180, 0, 1);"></div><div id="circle44" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 110.433, -178.467, 0, 1);"></div><div id="circle47" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 93.6933, -180, 0, 1);"></div><div id="circle33" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 76.1402, -180, 0, 1);"></div><div id="circle52" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 268.621, -180, 0, 1);"></div><div id="circle136" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 163.039, -179.849, 0, 1);"></div><div id="circle88" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 274.258, -180, 0, 1);"></div><div id="circle66" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 165.991, -180, 0, 1);"></div><div id="circle105" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 259.681, -180, 0, 1);"></div><div id="circle30" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 240.602, -180, 0, 1);"></div><div id="circle180" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 35.7384, -180, 0, 1);"></div><div id="circle155" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 131.254, -179.731, 0, 1);"></div><div id="circle190" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 198.316, -180, 0, 1);"></div><div id="circle142" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 196.709, -180, 0, 1);"></div><div id="circle110" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 2.63527, -180, 0, 1);"></div><div id="circle24" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 99.5383, -180, 0, 1);"></div><div id="circle163" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 67.5549, -180, 0, 1);"></div><div id="circle159" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 48.6162, -180, 0, 1);"></div><div id="circle178" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 114.239, -180, 0, 1);"></div><div id="circle177" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 274.312, -180, 0, 1);"></div><div id="circle114" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 81.2502, -175.378, 0, 1);"></div><div id="circle196" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 210.4, -180, 0, 1);"></div><div id="circle84" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 143.563, -180, 0, 1);"></div><div id="circle17" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 276.895, -177.952, 0, 1);"></div><div id="circle181" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 62.8416, -180, 0, 1);"></div><div id="circle125" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 195.99, -180, 0, 1);"></div><div id="circle94" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 157.034, -180, 0, 1);"></div><div id="circle49" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 237.539, -180, 0, 1);"></div><div id="circle9" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 3px; width: 3px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 149.056, -177.59, 0, 1);"></div><div id="circle89" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 1px; width: 1px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 283.896, -179.921, 0, 1);"></div><div id="circle8" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 75.2365, -180, 0, 1);"></div><div id="circle188" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 2px; width: 2px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 111.052, -180, 0, 1);"></div><div id="circle98" style="position: absolute; background-size: cover; background-image: url(&quot;images/bubble.png&quot;); opacity: 1; height: 4px; width: 4px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 95.1761, -172.087, 0, 1);"></div></div>
+
+		<div id="Logo"></div>
+
+		<div id="water_container" style="transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, -80, 0, 1);">
+			<div id="water" style="background-position: -600px 0px;"></div>
+		</div>
+
+		<div id="banner_border"></div>
+	    <div id="banner_btn" style="visibility: visible;"></div>
+
+	    <div id="legal_container">
+	    	<div id="legal"></div>
+			<div id="legal_button"></div>
+	    </div>
+
+    </div>
+
+
+    <script>
+        /* banner spcific scripts */
+        var clickTag = "https://www.brita.com/replacement-filters/longlast/";
+
+        var rotateSwitch = true;
+
+        var globalVar = {};
+        globalVar.bannerBtn = document.getElementById("banner_btn");
+        globalVar.legal = document.getElementById("legal_button");
+
+        //adds click
+        addEvent("click", globalVar.bannerBtn, ctaClick);
+
+        addEvent("click", globalVar.legal, legalClick);
+
+        //particles
+        sparkle = {
+	        delayedCall: 0,
+	        posX: 0,
+	        posY: 0,
+	        width: 300,
+	        height: 50,
+	        distTop: 0,
+	        distBot: 0,
+	        amountMin: 200,
+	        amountMax: 200,
+	        sizeMin: 1,
+	        sizeMax: 4,
+	        timeMin: 2,
+	        timeMax: 10,
+	        opacityMin: 1,
+	        opacityMax: 1,
+	        containerID: "copy_container",
+	        xEndOffset: this.height - 100,
+	        fadeInDelay: .01,
+	        sparkleImageLoc: "bubble.png", // if empty striing "" this will default to circles
+	        colors: [
+	                "#ffffff"
+	            ]
+	    }
+
+        function start(id) {
+
+            globalVar.bannerBtn.style.visibility = "visible";
+
+            TweenLite.delayedCall(.01, frame1);
+
+
+        }
+
+
+        function frame1() {
+			TweenLite.to(copy_container, 6,{clip:"rect(0px 300px 100px 0px)", ease:Cubic.easeInOut, force3D: true, rotationZ: 0.01, delay:0});
+
+			TweenLite.to(water_container, 6,{y:-80, ease:Cubic.easeInOut, force3D: true, rotationZ: 0.01, delay:.07});
+
+			TweenLite.to(copy, 6,{y:-60, ease:Cubic.easeInOut, force3D: true, rotationZ: 0.01, delay:1});
+
+			setInterval(rotateWater, 60);
+
+			sparkles(sparkle, 0, 0, 6);
+
+            TweenLite.delayedCall(6, frame2);
+        }
+
+        function frame2(){
+
+	        TweenLite.to(cta, .25,{opacity:1, ease:Cubic.easeIn, force3D: true, rotationZ: 0.01, delay:1});
+
+
+            TweenLite.delayedCall(1.5, frame3);
+        }
+		var countWater = 0;
+		var bannerWidth = 300;
+        function rotateWater(){
+	        var waterString = (countWater + "px 0px").toString();
+	        if(rotateSwitch){
+		        TweenLite.set(water, {backgroundPosition:waterString ,  delay:0});
+		        if(countWater >= -(bannerWidth * 12)){
+		        	countWater = countWater - bannerWidth;
+		        }
+		        else{
+			        countWater = 0;
+		        }
+	        }
+        }
+
+        function frame3(){
+
+	        rotateSwitch = false;
+
+            addRoll(globalVar.bannerBtn, ctaRoll);
+
+        }
+
+        function ctaClick() {
+            window.open(clickTag);
+        }
+
+		var legalState = false;
+
+        function legalClick() {
+            if(legalState == false){
+				TweenLite.to(legal_container, .2,{y:-12, force3D: true, rotationZ: 0.01, ease:Cubic.easeOut});
+				legalState = true;
+            }
+			else{
+            	TweenLite.to(legal_container, .2,{y:0, force3D: true, rotationZ: 0.01, ease:Cubic.easeIn});
+            	legalState = false;
+            }
+
+        }
+
+
+        function addRoll(theBtn, theFunc) {
+            var img = document.createElement('img');
+            if (img.addEventListener) {
+                addEvent("mouseover", theBtn, theFunc);
+                addEvent("mouseout", theBtn, theFunc);
+            } else {
+                addEvent("onmouseover", theBtn, theFunc);
+                addEvent("onmouseout", theBtn, theFunc);
+            }
+        }
+
+        function ctaRoll(evt) {
+	        var theCta  = document.getElementById("cta")
+				if(evt.type === "mouseover" || evt.type ==="onmouseover"){
+					theCta.style.background = "#cf3f01";
+				}
+				else{
+					theCta.style.background = "#ff4d00";
+				}
+           }
+
+
+        function sparkles(sparkleData, theX, theY, theTime) {
+		    var amount = sparkleData.amountMin + ((sparkleData.amountMax - sparkleData.amountMin) * Math.random());
+		    for (var i = amount - 1; i >= 0; i--) {
+		        var spklData = {};
+		        spklData.containerID = sparkleData.containerID;
+		        spklData.fadeInDelay = sparkleData.fadeInDelay;
+		        spklData.sparkleImageLoc = sparkleData.sparkleImageLoc;
+		        spklData.xEndOffset = sparkleData.xEndOffset;
+		        spklData.i = i;
+		        spklData.size = sparkleData.sizeMin + ((sparkleData.sizeMax - sparkleData.sizeMin) * Math.random());
+		        spklData.delay = (sparkleData.timeMax - sparkleData.timeMin) * Math.random();
+		        spklData.time = ((sparkleData.timeMin  + sparkleData.timeMax) * Math.random());
+
+		        spklData.opacity = sparkleData.opacityMin + ((sparkleData.opacityMax - sparkleData.opacityMin) * Math.random());
+		        spklData.color = sparkleData.colors[Math.round(Math.random() * sparkleData.colors.length)];
+		        spklData.posX = (sparkleData.width * Math.random());
+		        spklData.posY = (sparkleData.height + 30);
+
+
+		        spklData.endX = theX - sparkleData.xEndOffset;
+		        spklData.endY = -spklData.posY - (100);
+		        TweenLite.delayedCall(spklData.delay + sparkleData.delayedCall, createSparkle, [spklData]);
+		    };
+		};
+
+		function createSparkle(sparkleData) {
+		    var circle = document.createElement("div");
+		    circle.id = "circle" + sparkleData.i;
+		    var randOdd = Math.random() < 0.5;
+		    if (randOdd) {
+		        sparkleData.sparkleImageLoc = "images/bubble.png";
+		    } else {
+		        sparkleData.sparkleImageLoc = "images/bubble.png";
+		    }
+
+
+		    circle.setAttribute("style", "position:absolute;background-size:cover;background-image:url(" + sparkleData.sparkleImageLoc + ");");
+		    document.getElementById(sparkleData.containerID).appendChild(circle);
+
+
+		    TweenLite.set(circle, {
+		        x: sparkleData.posX,
+		        y: sparkleData.posY,
+		        width: sparkleData.size,
+		        height: sparkleData.size,
+		        opacity: 1,
+		        force3D: true,
+		        rotationZ: 0.01
+		    });
+
+		    TweenLite.to(circle, sparkleData.time, {
+		        delay: sparkleData.fadeInDelay,
+		        y: sparkleData.endY,
+		        opacity: 1,
+		        force3D: true,
+		        rotationZ: 0.01,
+		        ease: Cubic.easeInOut
+		    });
+
+		};
+
+        function addEvent(evnt, elem, func) {
+            if (elem.addEventListener) // W3C DOM
+                elem.addEventListener(evnt, func, false);
+            else if (elem.attachEvent) { // IE DOM
+                elem.attachEvent("on" + evnt, func);
+            } else { // No much to do
+                elem[evnt] = func;
+            }
+        }
+
+
+        (function() {
+            var method;
+            var noop = function() {};
+            var methods = [
+                'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+                'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+                'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+                'timeStamp', 'trace', 'warn'
+            ];
+            var length = methods.length;
+            var console = (window.console = window.console || {});
+            while (length--) {
+                method = methods[length];
+                if (!console[method]) {
+                    console[method] = noop;
+                }
+            }
+        }());
+
+    </script>
+
+
+
+</body></html>

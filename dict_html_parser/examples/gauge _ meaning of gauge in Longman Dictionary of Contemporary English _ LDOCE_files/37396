@@ -1,0 +1,16 @@
+var bk_results = {
+ "campaigns": [
+  {
+    "campaign": 137884,
+    "bk_audience": "All+Test",
+    "bkuuid_24311": "RLshvbx/99elA4Jj",
+    "timestamp": 1509085449,
+    "categories": [
+    {
+     "categoryID": 38838,
+     "timestamp": 1509085449
+    }
+    ]
+  }
+ ]
+};

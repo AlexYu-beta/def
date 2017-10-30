@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)https://s0.2mdn.net/6960200/1507216384764/Fi_A1MotoX4_1_EN_300x250_HTML5/Fi_A1MotoX4_1_EN_300x250_HTML5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="ad.size" content="width=300,height=250">
+		<script type="text/javascript">var clickTag = "";</script>
+
+		
+		<title>Google</title>
+		<style type="text/css">
+
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+			body { 
+				padding: 0px;
+				margin: 0px;
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			a#myAdLink { 
+				display: inline-block;
+				background: #fff;
+			}
+
+			#myAd {
+				width: 300px;
+				height: 250px;
+				position: relative;
+				overflow: hidden;
+				opacity: 0;
+				background: #e2e9e9;
+			}
+
+			#myAd .myAd_Img {
+				position: absolute;
+			}
+
+			#myAd #battery {
+				background: url(images/battery3.jpg);
+				width: 529px;
+				height: 728px;
+				left: -210px;
+				top: 34px;
+				background-color: #e2e9e9;
+			}
+
+			#myAd #battery_headline {
+				background: url(images/battery_headline.png);
+				width: 155px;
+				height: 12px;
+				left: 73px;
+				top: 19px;
+			}
+
+			#myAd #camera {
+				background: url(images/camera_v2.jpg);
+				width: 420px;
+				height: 450px;
+			}
+
+			#myAd #camera_headline {
+				background: url(images/camera_headline.png);
+				width: 181px;
+				height: 12px;
+				left: 60px;
+				top: 219px;
+			}
+
+			#myAd #fi_logo {
+				background: url(images/fi_logo.png);
+				width: 26px;
+				height: 34px;
+				left: 9px;
+				top: 15px;
+			}
+
+			#myAd #android_headline {
+				background: url(images/android_headline.png);
+				width: 130px;
+				height: 34px;
+				left: 13px;
+				top: 80px;
+			}
+
+			#myAd #android_one_logo {
+				background: url(images/android_one_logo.png);
+				width: 74px;
+				height: 14px;
+				left: 210px;
+				top: 226px;
+			}
+
+			#myAd #cta {
+				background: url(images/cta.png);
+				width: 98px;
+				height: 35px;
+				left: 15px;
+				top: 139px;
+			}
+
+			#myAd #cta:hover {
+				background: url(images/cta_hover.png);
+			}
+
+		</style>
+
+	<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+	
+	<body>
+
+		<a id="myAdLink" target="_blank" href="javascript:window.open(window.clickTag)">
+			<div id="myAd" style="visibility: inherit; opacity: 1;">
+				<div class="myAd_Img" id="new_bg" style="opacity: 1;"></div>
+				<div class="myAd_Img" id="camera" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 0;"></div>
+				<div class="myAd_Img" id="camera_headline" style="opacity: 0;"></div>
+				<div class="myAd_Img" id="fi_logo" style="opacity: 1;"></div>
+				<div class="myAd_Img" id="android_headline" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"></div>
+				<div class="myAd_Img" id="battery" style="transform: matrix(0.25, 0, 0, 0.25, 170, -270); opacity: 1;"></div>
+				<div class="myAd_Img" id="battery_headline" style="opacity: 0;"></div>
+				<div class="myAd_Img" id="android_one_logo" style="opacity: 1;"></div>
+				<div class="myAd_Img" id="cta" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"></div>
+			</div>
+		</a>
+
+		<script type="text/javascript" src="./TweenMax.min(1).js"></script>
+
+		<script type="text/javascript" src="./CustomEase.min.js"></script>
+
+		<script type="text/javascript">
+
+			(function(){
+
+				var tl1 = new TimelineMax();
+
+				tl1.to('#myAd', .5, { autoAlpha:1 })
+
+				.from('#camera', 1.5, { y:-70, ease: Power2.easeInOut }, '-=.5')
+				.from('#camera', 1.5, { alpha:0, ease: Power2.easeInOut }, '-=1')
+				.from('#camera_headline', 1, { alpha:0, ease: Power2.easeInOut }, '-=1')
+
+				.to('#camera', 1.5, { alpha:0, ease: Power2.easeInOut }, '+=1')
+				.to('#camera_headline', 1.5, { alpha:0, ease: Power2.easeInOut }, '-=1.5')
+
+				.from('#battery', 1.5, { x:-70, ease: Power2.easeInOut }, '-=1')
+				.from('#battery', 1.5, { alpha:0, ease: Power2.easeInOut }, '-=1')
+				.from('#battery_headline', 1, { alpha:0, ease: Power2.easeInOut }, '-=1')
+
+				.to('#battery', 1.5, { scaleX:.25, scaleY:.25, x:170, y:-270, ease: Power2.easeInOut }, '+=1')
+				.to('#battery_headline', 2, { alpha:0, ease: Power2.easeInOut }, '-=1.5')
+
+				.from('#new_bg', 1, { alpha:0, ease: Power2.easeInOut }, '-=2')
+				.from('#fi_logo', 1, { alpha:0, ease: Power2.easeInOut }, '-=1')
+				.from('#android_one_logo', 1, { alpha:0, ease: Power2.easeInOut }, '-=1')
+				
+				.from('#cta', 1, { y:-25, ease: Power2.easeInOut }, '-=.5')
+				.from('#cta', 1, { alpha:0, ease: Power2.easeInOut }, '-=.75')
+				.from('#android_headline', 1, { y:-25, ease: Power2.easeInOut }, '-=1.15')
+				.from('#android_headline', 1, { alpha:0, ease: Power2.easeInOut }, '-=.9')
+
+				tl1.timeScale(1)
+
+			}());
+
+		</script>
+
+	
+
+</body></html>
