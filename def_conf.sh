@@ -4,11 +4,24 @@
 # Author: AlexYu-beta
 # the configuration file
 
-# project version (should not be revised)
+# project version
 version=v0.2
 
-# the directory of redis source code
+# the path of the project
+project_dir="/home/alex/Experiments/def"
+
+# the path of redis source code
 redis_dir="/usr/local/redis-4.0.2/src"
 
 # the redis password
 redis_pwd=$REDISPWD
+
+##########################################
+# you can change the configuration here:
+##########################################
+
+##### the path of redis source code
+# redis_dir=""
+
+##### the path of the project
+# project_dir=""

@@ -2,12 +2,14 @@ def, a bash-based personal encyclopedia system.
 
 Usage:
 def <word>:
-    get the definition of a word
+    get the definition of a word.
 
-def -a <word> <definition file>:
-    add a definition item from a file
+def -af <word> <definition file>:
+    add a definition item from a file.
+    * the definition files are stored in ./data/def_files by convention.
+    * the definition files are postfixed with .def by convention.
 
-def -as <word> <definition string>:
+def -as <word>:<definition string>:
     add a definition item directly
 
 def -h/def -help:

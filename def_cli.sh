@@ -5,9 +5,10 @@
 # the def client script
 # requires alias from zsh
 
+
 if [ $# = 0 ];
 then
-	echo 'Err: Missing parameters.'	
+	echo 'Err: Missing parameters.'
 	echo 'Try "def -h" to get some help!'
 	exit -1
 fi
@@ -23,24 +24,88 @@ case $1 in
 	echo $version
 ;;
 
--a|-A)
+-as|-AS)
+	word=""
 	definition=""
 	if [ $# -lt 2 ];
 	then
-		echo 'Err: Missing parameters.'
+		echo 'Err: Wrong number of parameters.'
+		echo 'Try "def -h" to get some help!'
+		exit -1
+	else
+		definition=$*
+		temp=${definition#* }
+		word=${temp%%:*}
+		definition_trunc=${definition#*:}
+		definition_len=${#definition}
+		definition_trunc_len=${#definition_trunc}
+#		echo "<test>"
+#		echo $definition_len
+#		echo $definition_trunc_len
+#		echo "</test>"
+		if [ $definition_len = $definition_trunc_len -o $definition_trunc_len = 0 ];
+		then
+			echo 'Warn: No definition string.'
+			definition='No definition'
+		else
+			definition=$definition_trunc
+		fi
+	fi
+	echo -e "the word is: \t\t" $word
+	echo -e "the definition is:\t" $definition
+;;
+
+-af|-AF)
+	word=""
+	definition=""
+	if [ $# -lt 2 -o $# -gt 3 ];
+	then
+		echo 'Err: Wrong number of parameters.'
 		echo 'Try "def -h" to get some help!'
 		exit -1
 	elif [ $# = 2 ];
 	then
+		echo 'Warn: No definition file.'
+		word=$2
 		definition='No definition'
 	else
-		definition=$3
+		word=$2
+		def_path=$3
+		base_dir=${def_path%/*}
+		file_name=${def_path##*/}
+		base_dir_len=${#base_dir}
+		file_name_len=${#file_name}
+		if [ $base_dir_len = $file_name_len ];
+		then
+			source ./def_conf.sh
+			base_dir=$project_dir"/data/def_files"
+		fi
+		match_num=`find $base_dir -type f -name "$file_name" | wc -l`
+		if [ $match_num = 0 ];
+		then
+			echo 'Err: Definition file not found.'
+			echo 'Hint: The definition files are stored in ./data/def_files by convention.'
+	    echo 'Hint: The definition files are postfixed with .def by convention.'
+			exit -1
+		fi
+		file=$base_dir"/"$file_name
+		definition=`cat $file`
 	fi
-	echo $definition
+	echo "Notice: You are trying adding a word definition to your local encyclopedia."
+	echo -e "The word is: \t\t" $word
+	echo -e "The definition is:\t" $definition
+	echo "Sure to continue?(y/n)"
+	read query_ch
+	if [ $query_ch = 'y' ];
+	then
+		echo 'Adding the word definition...'
+	else
+		echo 'The word definition abandoned!'
+	fi
 ;;
 
 *)
-	echo 'Err: Command not found.'	
+	echo 'Err: Command not found.'
 	echo 'Try "def -h" to get some help!'
 	exit -1
 ;;
