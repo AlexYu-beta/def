@@ -99,6 +99,9 @@ case $1 in
 	if [ $query_ch = 'y' ];
 	then
 		echo 'Adding the word definition...'
+		# step 1: create the def file and write to ./data/def_files
+		# step 2: (not-implemented yet) encrypt the file to ./data/tmp
+		# step 3: write the file to db
 	else
 		echo 'The word definition abandoned!'
 	fi
